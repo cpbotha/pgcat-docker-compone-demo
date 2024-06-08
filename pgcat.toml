@@ -74,7 +74,7 @@ password = "postgres"
 # Maximum number of server connections that can be established for this user
 # The maximum number of connection from a single Pgcat process to any database in the cluster
 # is the sum of pool_size across all users.
-pool_size = 20 
+pool_size = 10 
 
 # Maximum query duration. Dangerous, but protects against DBs that died in a non-obvious way.
 statement_timeout = 0
