@@ -1,6 +1,9 @@
 services:
   pgcat:
     image: ghcr.io/postgresml/pgcat:latest
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "6432:6432"
       - "9930:9930"
@@ -8,7 +11,7 @@ services:
       - ./pgcat.toml:/etc/pgcat/pgcat.toml
 
   postgres:
-    image: postgres:14
+    image: postgres:16
     command: postgres -c config_file=/etc/postgresql/postgresql.conf
     ports:
       - "5432:5432"
@@ -16,3 +19,8 @@ services:
       - ./my-postgres.conf:/etc/postgresql/postgresql.conf
     environment:
       - POSTGRES_PASSWORD=postgres
+    # so we can make pgcat wait until postgres is actually ready to receive connections
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      start_period: 5s
