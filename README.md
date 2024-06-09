@@ -28,6 +28,10 @@ The Ryzen and i7 (x86) numbers can't be right. Any ideas internet?
   - on macOS, the pgcat docker was am64 emulated
 - pool size 10
 - pgtuned postgres: 4GB RAM, data warehouse, 20 connections, 10 cores
+- test platform details
+  - m1max with 64GB RAM, 1TB SSD
+  - 5900x with 48GB RAM allocated to WSL, fast 2TB PCIE 4.0 SSD
+  - i7 with 48GB RAM, fast 1TB PCIE 3.0 SSD
 
 | Platform        | baseline 10 | pgcat 10 | pgcat 100 |
 | --------------- | ----------- | -------- | --------- |
