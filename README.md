@@ -22,7 +22,10 @@ pgbench -p 6432 -h localhost -T 20 -C -c 100 -n -U postgres postgres
 
 # Benchmarks
 
+The Ryzen / x86 numbers can't be right. I saw similarly disappointing behaviour on an 8th gen i7 with Ubuntu 22.04. Any ideas internet?
+
 - docker pgcat:latest (1.1.2-dev4) and postgres:16
+  - on macOS, the pgcat docker was am64 emulated
 - pool size 10
 - pgtuned postgres: 4GB RAM, data warehouse, 20 connections, 10 cores
 
