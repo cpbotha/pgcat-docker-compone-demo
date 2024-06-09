@@ -12,8 +12,11 @@ Try with `pgbench`:
 # https://www.postgresql.org/docs/current/pgbench.html
 # init "postgres" database for pgbench
 pgbench -p 6432 -h localhost -i -U postgres postgres
-# baseline perf to the bare postgres
-pgbench -p 5432 -h localhost -T 20 -C -c 100 -n -U postgres postgres
+# baseline perf with 10 clients to the bare postgres
+pgbench -p 5432 -h localhost -T 20 -C -c 10 -n -U postgres postgres
+# 10 clients via pgcat
+pgbench -p 6432 -h localhost -T 20 -C -c 10 -n -U postgres postgres
+# 100 clients via pgcat
 # bench with 100 clients for 20 seconds
 # -C: new connection for each transaction
 # -n: no vacuuming before running test
