@@ -37,7 +37,7 @@ The Ryzen and i7 (x86) numbers can't be right. Any ideas internet?
 | --------------- | ----------- | -------- | --------- |
 | m1max           | 154         | 624      | 577       |
 | ryzen 5900x wsl | 133         | 19       | 19        |
-| i7-8750H ubuntu | 86          | 20       | 20        |
+| i7-8750H ubuntu | 88          | 20       | 20        |
 
 ## macbook pro m1max
 
